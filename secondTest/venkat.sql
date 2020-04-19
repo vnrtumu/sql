@@ -33,8 +33,8 @@ HAVING
                         INNER JOIN 
                             hotel ON room.hotel_id = hotel.id 
                         WHERE 
-                            month(startDate) = 3 AND month(endDate) = 3 
+                            
+                            month(startDate) = MONTH(CURDATE()) - 1 AND month(endDate) = MONTH(CURDATE()) - 1
                         GROUP BY 
-                            hotel.id)TEMPORARY
-                        
+                            hotel.id)TEMPORARY   
                     )
